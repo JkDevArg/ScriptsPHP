@@ -11,7 +11,7 @@ https://coinlayer.com/ conversión BTC a GBP
 <p>Obtiene Información -> https://ipinfo.io/</p>
 <p>Mapa: http://openstreetmap.org + Leaflet: https://leafletjs.com/</p>
 
-## 2) Api IP + GEO + OpenStreet Map + Leaflet
+## 2) Api IP + GEO (Best) + OpenStreet Map + Leaflet
 <p>Obtiene IP de -> https://api.ipify.org</p>
 <p>Obtiene Información -> http://ipwhois.app/</p>
 <p>Mapa: http://openstreetmap.org + Leaflet: https://leafletjs.com/</p>
