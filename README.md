@@ -7,9 +7,9 @@ https://api.exchangerate.host/ utilizado solo para hacer una conversión de USD 
 https://coinlayer.com/ conversión BTC a GBP
 
 ## Api IP + GEO + OpenStreet Map + Leaflet
-Obtiene IP de -> https://api.ipify.org
-Obtiene Información -> https://ipinfo.io/
-Mapa: http://openstreetmap.org + Leaflet: https://leafletjs.com/
+<p>btiene IP de -> https://api.ipify.org</p>
+<p>Obtiene Información -> https://ipinfo.io/</p>
+<p>Mapa: http://openstreetmap.org + Leaflet: https://leafletjs.com/</p>
 
 
 ## Api Universidad
