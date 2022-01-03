@@ -1,13 +1,15 @@
 <?php 
 
-$ip = file_get_contents('https://api.ipify.org');
-$ch = curl_init('https://ipinfo.io/'.$ip.'/geo');
+$ip = file_get_contents('https://api.ipify.org/');
+$ch = curl_init('http://ipwhois.app/json/'.$ip.'&lang=es');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $json = curl_exec($ch);
 curl_close($ch);
 
-$geoip = json_decode($json, true); 
-
+$geoip = json_decode($json, true);
+$latitud = $geoip['latitude'];
+$longitud = $geoip['longitude'];
+$loc = $latitud.','.$longitud;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,32 +31,52 @@ $geoip = json_decode($json, true);
                 <p class="lead">Info IP</p>
                 <hr class="my-2" />
                 <p>
+                    <span class="text-info">Continente:</span>
+                    <?php echo $geoip['continent']; echo ' ['.$geoip['continent_code'].']'; ?>
+                </p>
+                <p>
+                    <span class="text-info">País:</span>
+                    <?php echo $geoip['country']; echo ' ['.$geoip['country_code'].']'; echo " <img src=".$geoip['country_flag']." width='15px' height='15px'>";?>
+                </p>
+                <p>
+                    <span class="text-info">Capital:</span>
+                    <?php echo $geoip['country_capital']; ?>
+                </p>
+                <p>
+                    <span class="text-info">Region:</span>
+                    <?php echo $geoip['region']; ?>
+                </p>
+                <p>
                     <span class="text-info">Ciudad:</span>
                     <?php echo $geoip['city']; ?>
                 </p>
                 <p>
-                    <span class="text-info">Región:</span>
-                    <?php echo $geoip['region']; ?>
+                    <span class="text-info">Moneda:</span>
+                    <?php echo $geoip['currency'];  echo ' ['.$geoip['currency_code'].']'; ?>
                 </p>
                 <p>
-                    <span class="text-info">País:</span>
-                    <?php echo $geoip['country']; ?>
-                </p>
-                <p>
-                    <span class="text-info">ISP:</span>
-                    <?php echo $geoip['org']; ?>
-                </p>
-                <p>
-                    <span class="text-info">Postal:</span>
-                    <?php echo $geoip['postal']; ?>
+                    <span class="text-info">Cambio Moneda:</span>
+                    <?php echo $geoip['currency_symbol'];  echo $geoip['currency_rates'].' = 1 USD'; ?>
                 </p>
                 <p>
                     <span class="text-info">Zona Horaria:</span>
                     <?php echo $geoip['timezone']; ?>
                 </p>
                 <p>
+                    <span class="text-info">Asn:</span>
+                    <?php echo $geoip['asn']; ?>
+                </p>
+                <p>
+                    <span class="text-info">Org:</span>
+                    <?php echo $geoip['org']; ?>
+                </p>
+                <p>
+                    <span class="text-info">ISP:</span>
+                    <?php echo $geoip['isp']; ?>
+                </p>
+                <p>
                     <span class="text-info">Localización:</span>
-                    <?php echo $geoip['loc']; ?>
+                    <?php echo $loc; ?>
                 </p>
 
                 <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
@@ -63,8 +85,8 @@ $geoip = json_decode($json, true);
                     var osmUrl = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                         osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                         osm = L.tileLayer(osmUrl, { maxZoom: 18, attribution: osmAttrib });
-                    var map = L.map("map").setView([<?php echo $geoip['loc']; ?>], 11).addLayer(osm);
-                    L.marker([<?php echo $geoip['loc']; ?>]).addTo(map).bindPopup("Tu IP: <?php echo $ip; ?>").openPopup();
+                    var map = L.map("map").setView([<?php echo $loc; ?>], 14).addLayer(osm);
+                    L.marker([<?php echo $loc; ?>]).addTo(map).bindPopup("Tu IP: <?php echo $ip; ?>").openPopup();
                 </script>
             </div>
         </div>
