@@ -1,8 +1,12 @@
 # ScriptsPHP
 
-## Api Exchange 
+## Api BTC 
 
 https://api.exchangerate.host/ utilizado solo para hacer una conversión de USD a SOL(Peru)
+
+## Api Exchange 
+
+https://coinlayer.com/ conversión BTC a GBP
 
 
 ## Api Universidad
