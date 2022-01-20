@@ -13,8 +13,8 @@ function curl_post_request($url, $data)
 }
  
 $postData = array(
-    "user-id" => "jkdevarg",
-    "api-key" => "9f5Ue7a2o19UPPk9FpBNGK8n2sv0KlYughrD2ocART2dRj4h",
+    "user-id" => "USER ID",
+    "api-key" => "API KEY",
     "ip" => $ip
 );
  
