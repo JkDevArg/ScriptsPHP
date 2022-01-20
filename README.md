@@ -55,3 +55,9 @@ Agradecimiento a @masterguru (<a href="https://github.com/masterguru">github</a>
   48) $mail->addAddress('CAMBIAR CORREO PARA', 'CAMBIAR TEXTO');
   ```
 </details>
+
+## Api What CMS
+<details>
+  <summary><b>Información</b></summary>
+  https://www.who-hosts-this.com/API Api What CMS
+</details>

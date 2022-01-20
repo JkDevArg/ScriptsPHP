@@ -4,7 +4,7 @@ $web = $_POST['url'];
 if(isset($_POST['enviar'])) {
     $ch = curl_init();
 
-    $ch = curl_init('https://whatcms.org/API/Tech?key=w9ufka6e3ky274tvejsj5vpfra1jglxcr28noaphsm8ptqqlx70s1hxioe6f9si622vffp&url='.$web);
+    $ch = curl_init('https://whatcms.org/API/Tech?key=YOUR API KEY&url='.$web);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     $json = curl_exec($ch);
